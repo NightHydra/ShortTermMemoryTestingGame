@@ -21,11 +21,11 @@ static class KeyVars
     public const int MAXOVERFLOW = 80;
 
     // Restricting how many frames apart timers may go off
-    public const int SPAWN_FRAME_DIFFERENCE = 10;
+    public const int SPAWN_FRAME_DIFFERENCE = 5;
 
     // The ratio of the possible points of the big boxes to
     //     the timers
-    public const double STARTING_POINT_BOX_RATIO = 1.0;
+    public const double STARTING_POINT_BOX_RATIO = 1.2;
 
     // Score Pre-Divider
     public const int SCORE_PRE_DIVISOR = 3;
@@ -37,7 +37,7 @@ static class KeyVars
     public const int LATE_CLICK_PENALTY = 300;
 
     // The number of rounds
-    public const int NUMBER_OF_ROUNDS = 15;
+    public const int NUMBER_OF_ROUNDS = 12;
 
 
 

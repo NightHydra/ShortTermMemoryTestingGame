@@ -32,6 +32,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.scoringlabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -60,12 +61,24 @@
             this.scoringlabel.Text = "Score: ______      ";
             this.scoringlabel.Click += new System.EventHandler(this.label2_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.Location = new System.Drawing.Point(811, 742);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(228, 58);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Round: 1";
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2917, 1912);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.scoringlabel);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -81,6 +94,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label scoringlabel;
+        private System.Windows.Forms.Label label2;
     }
 }
 

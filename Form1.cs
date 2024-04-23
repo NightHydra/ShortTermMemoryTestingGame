@@ -48,6 +48,7 @@ namespace COGS_Final
             InitializeComponent();
 
             scoringlabel.Location = new Point(KeyVars.DEFAULTWIDTH + 200, KeyVars.DEFAULTHEIGHT + 150);
+            label2.Location = new Point(KeyVars.DEFAULTWIDTH + 200, KeyVars.DEFAULTHEIGHT + 100);
 
             scoreSystem = new ScoreBoard(scoringlabel);
 
@@ -75,7 +76,7 @@ namespace COGS_Final
             // Increment the frame counter
             ++frameCount;
 
-            if (roundNumber == KeyVars.NUMBER_OF_ROUNDS && frameCount == framesTimerLasts + KeyVars.MAXOVERFLOW+3)
+            if (roundNumber == KeyVars.NUMBER_OF_ROUNDS+1 && frameCount == framesTimerLasts + KeyVars.MAXOVERFLOW+3)
             {
                 StatisticsPage.prevGameStats = gameStatistics;
                 StatisticsPage statsForm = new StatisticsPage();
@@ -87,12 +88,22 @@ namespace COGS_Final
             }
 
             // A full round is how long two timers last
-            if (frameCount == framesTimerLasts * (2))
+            if (frameCount == framesTimerLasts * (2) )
             {
                 frameCount = 0; 
                 ++roundNumber;
 
-                frameToSpawnTimer = generateFrameToSpawn();
+                // Only spawn a timer if its not the last round
+                if (roundNumber <= KeyVars.NUMBER_OF_ROUNDS)
+                {
+                    label2.Text = "Round: " + roundNumber.ToString();
+                    frameToSpawnTimer = generateFrameToSpawn();
+                }
+                else
+                {
+                    label2.Text = "Round: Finishing";
+                }
+                
             }
 
             foreach (Counter timer in counterList)
@@ -103,6 +114,7 @@ namespace COGS_Final
             if (frameCount == frameToSpawnTimer)
             {
                 SpawnNewTimer();
+                frameToSpawnTimer = -1;
             }
             
         }
@@ -159,6 +171,11 @@ namespace COGS_Final
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
         {
 
         }
